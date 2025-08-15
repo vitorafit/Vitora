@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>VITORA - Under Construction</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 600px;
+        padding: 2rem;
+        position: relative;
+        z-index: 2;
+        margin-top: -8%;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: -27%;
+        margin-right: 6%;
+      }
+
+      .logo img {
+        max-width: 100%;
+        height: auto;
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      h1 {
+        color: #1e3a8a;
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        color: #6b7280;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+
+      .construction-text {
+        color: #001f61;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .description {
+        color: #6b7280;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 6px;
+        background: #e5e7eb;
+        border-radius: 3px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #001f61, #3b82f6);
+        width: 65%;
+        border-radius: 3px;
+      }
+
+      .protein-badge {
+        display: inline-flex;
+        align-items: center;
+        background: #001f61;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+        transition: transform 0.2s ease;
+      }
+
+      .protein-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+      }
+
+      .social-section {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .social-title {
+        color: #001f61;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .social-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.5rem;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .social-btn ion-icon {
+        color: inherit;
+      }
+
+      .facebook {
+        background: linear-gradient(135deg, #1877f2, #42a5f5);
+      }
+
+      .instagram {
+        background: linear-gradient(
+          72deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+      }
+
+      .tiktok {
+        background: linear-gradient(135deg, #000000, #000000, #000000);
+      }
+
+      .contact-section {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .contact-title {
+        color: #001f61;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-text {
+        color: #6b7280;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      .email-link {
+        display: inline-flex;
+        align-items: center;
+        background: #001f61;
+        color: white;
+        text-decoration: none;
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+      }
+
+      .email-link:hover {
+        background: #001f61;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
+      }
+
+      .email-link-icon {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .social-buttons {
+          gap: 0.75rem;
+        }
+
+        .social-btn {
+          width: 45px;
+          height: 45px;
+          font-size: 1.3rem;
+        }
+
+        .contact-section {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="vito-5.png" alt="" />
+      </div>
+
+      <div class="construction-text">Under Construction</div>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+      <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem">
+        Building something powerful...
+      </p>
+
+      <div class="protein-badge">High Quality Protein Products Coming Soon</div>
+
+      <div class="social-section">
+        <div class="social-title">Follow Us</div>
+        <div class="social-buttons">
+          <!--  <a
+            href="#"
+            class="social-btn facebook"
+            title="Facebook"
+            target="_blank"
+            ><ion-icon name="logo-facebook"></ion-icon>
+          </a> -->
+          <a
+            href="https://www.instagram.com/vitorafit/"
+            class="social-btn instagram"
+            title="Instagram"
+            target="_blank"
+            ><ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a
+            href="https://www.tiktok.com/@vitorafit"
+            class="social-btn tiktok"
+            title="TikTok"
+            target="_blank"
+          >
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+
+        <div class="contact-section">
+          <div class="contact-title">Get In Touch</div>
+          <p class="contact-text">
+            Have questions about our products or want to be notified when we
+            launch?
+          </p>
+          <a href="mailto:contact@vitora.com" class="email-link">
+            <ion-icon name="mail-outline" class="email-link-icon"></ion-icon
+            >Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
