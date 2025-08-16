@@ -118,25 +118,25 @@
         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
         transition: transform 0.2s ease;
         transform: skewX(-20deg);
-        position: relative; /* needed for pseudo-element */
+        position: relative;
       }
 
       .protein-badge span {
         display: inline-block;
-        transform: skewX(20deg); /* counter-skew text */
+        transform: skewX(20deg); 
       }
 
-      /* Add the slash */
+    
       .protein-badge::after {
         content: "";
         position: absolute;
         top: 0;
-        right: -15px; /* adjust distance from button */
-        width: 10px; /* thickness of slash */
+        right: -15px;
+        width: 10px; 
         height: 100%;
-        background: #001f61; /* blue slash */
-        transform: skewX(0deg); /* match rhomboid angle */
-        border-radius: 2px; /* optional, smooth edges */
+        background: #001f61; 
+        transform: skewX(0deg); 
+        border-radius: 2px; 
       }
 
       .protein-badge:hover {
@@ -192,9 +192,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
+        width: 40px;
+        height: 40px;
         color: white;
         text-decoration: none;
         transition: all 0.3s ease;
