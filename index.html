@@ -109,18 +109,38 @@
       .protein-badge {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         background: #001f61;
         color: white;
         padding: 0.75rem 1.5rem;
-        border-radius: 6px;
         font-size: 0.95rem;
         font-weight: 600;
         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
         transition: transform 0.2s ease;
+        transform: skewX(-20deg);
+        position: relative; /* needed for pseudo-element */
+      }
+
+      .protein-badge span {
+        display: inline-block;
+        transform: skewX(20deg); /* counter-skew text */
+      }
+
+      /* Add the slash */
+      .protein-badge::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -15px; /* adjust distance from button */
+        width: 10px; /* thickness of slash */
+        height: 100%;
+        background: #001f61; /* blue slash */
+        transform: skewX(0deg); /* match rhomboid angle */
+        border-radius: 2px; /* optional, smooth edges */
       }
 
       .protein-badge:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px) skewX(-20deg);
         box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
       }
 
@@ -231,30 +251,37 @@
         margin-bottom: 1rem;
         line-height: 1.5;
       }
-
       .email-link {
         display: inline-flex;
         align-items: center;
+        justify-content: center; /* center content */
         background: #001f61;
         color: white;
         text-decoration: none;
         padding: 0.75rem 1.25rem;
-        border-radius: 8px;
         font-size: 0.9rem;
         font-weight: 600;
         transition: all 0.2s ease;
         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+
+        /* Make it a rhomboid */
+        transform: skewX(-20deg);
       }
 
-      .email-link:hover {
-        background: #001f61;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
+      .email-link span {
+        display: inline-flex;
+        align-items: center;
+        transform: skewX(20deg); /* counter-skew the text and icon */
       }
 
       .email-link-icon {
         margin-right: 0.5rem;
         font-size: 1.2rem;
+      }
+
+      .email-link:hover {
+        transform: translateY(-2px) skewX(-20deg);
+        box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
       }
 
       @keyframes float {
@@ -312,7 +339,9 @@
         Building something powerful...
       </p>
 
-      <div class="protein-badge">High Quality Protein Products Coming Soon</div>
+      <div class="protein-badge">
+        <span>High Quality Protein Products Coming Soon</span>
+      </div>
 
       <div class="social-section">
         <div class="social-title">Follow Us</div>
@@ -348,8 +377,10 @@
             launch?
           </p>
           <a href="mailto:contact@vitora.com" class="email-link">
-            <ion-icon name="mail-outline" class="email-link-icon"></ion-icon
-            >Contact Us
+            <span>
+              <ion-icon name="mail-outline" class="email-link-icon"></ion-icon>
+              Contact Us
+            </span>
           </a>
         </div>
       </div>
